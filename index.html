@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#180d1c">
+<title>حكايتنا يا مايا ♡</title>
+<style>
+:root{--pink:#ff8fba;--pale:#ffe0ed;--ink:#fff5fa;--glass:rgba(38,19,39,.78)}*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:Tahoma,Arial,sans-serif;background:radial-gradient(ellipse at 15% 10%,#673052 0,transparent 34%),radial-gradient(ellipse at 90% 70%,#51244e 0,transparent 36%),linear-gradient(135deg,#100d1d,#241126 55%,#160d1a);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:37px 37px}
+#scrollProgress{position:fixed;top:0;right:0;height:3px;width:0;background:linear-gradient(90deg,#ff8fba,#ffe0ed);z-index:20;box-shadow:0 0 14px #ff8fba;transition:width .12s linear}main{width:min(900px,92%);margin:auto;padding:30px 0 70px;position:relative;z-index:1}.panel{background:var(--glass);border:1px solid #ffb6d32b;border-radius:28px;padding:clamp(20px,5vw,42px);box-shadow:0 22px 70px #0007;backdrop-filter:blur(12px);margin:18px 0}.center{text-align:center}.eyebrow{color:#ffb9d3;letter-spacing:2px;font-size:12px}
+h1{font-size:clamp(32px,8vw,58px);margin:14px 0;color:#ffe0ed;text-shadow:0 4px 30px #ff75ad55}h2{font-size:clamp(24px,5vw,34px);color:#ffd6e7;margin:0 0 18px}.sub{color:#f0cddd;line-height:2}.heart{font-size:48px;display:inline-block;animation:pulse 1.6s infinite;color:#ff9bc3}@keyframes pulse{50%{transform:scale(1.18)}}
+input,button{font:inherit;border-radius:15px;width:100%;padding:15px 16px}input{background:#160f19;border:1px solid #a85d83;color:white;text-align:center;margin:14px 0 10px;outline:none}button{border:0;background:linear-gradient(110deg,#ff75aa,#bd4b91);color:white;font-weight:bold;cursor:pointer;box-shadow:0 8px 24px #c34b9140}button:active{transform:scale(.99)}#error{color:#ffabc8;min-height:24px;font-size:14px}#content{display:none}
+.scroll-link{display:inline-block;margin-top:20px;color:#ffd3e5;text-decoration:none;animation:softBounce 2s infinite}@keyframes softBounce{50%{transform:translateY(5px)}}.flower-burst{position:fixed;inset:0;z-index:50;pointer-events:none;overflow:hidden}.burst-flower{position:absolute;left:50%;top:50%;font-size:clamp(22px,5vw,42px);opacity:0;filter:drop-shadow(0 4px 12px #ff8fba88);animation:flowerFly 3.2s cubic-bezier(.12,.72,.2,1) forwards}@keyframes flowerFly{0%{opacity:0;transform:translate(-50%,-50%) scale(.15) rotate(0deg)}12%{opacity:1}72%{opacity:1}100%{opacity:0;transform:translate(calc(-50% + var(--tx)),calc(-50% + var(--ty))) scale(var(--scale)) rotate(var(--rot))}}.reveal{opacity:0;transform:translateY(38px) scale(.985);filter:blur(5px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.75,.2,1),filter 1s ease}.reveal.visible{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}.reveal-signature{opacity:0;transform:translateY(16px);transition:opacity .9s ease,transform .9s ease}.reveal-signature.visible{opacity:1;transform:translateY(0)}.panel{transition:border-color .5s,box-shadow .5s}.panel:hover{border-color:#ffb6d36b;box-shadow:0 25px 85px #0008,0 0 35px #ff75ad12}.message{font-size:clamp(16px,2.4vw,18px);line-height:2.25;color:#fff0f6;white-space:pre-wrap;text-align:right}.signature{color:#ffb4d0;font-weight:bold;font-size:22px;margin-top:28px}.section{margin-top:34px}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.gallery img{width:100%;display:block;border-radius:20px;border:1px solid #ffb3d34d;box-shadow:0 12px 35px #0005;transition:transform .35s}.gallery img:hover{transform:translateY(-5px) scale(1.015)}
+.media-card{background:#1c1223;border:1px solid #ffb3d333;border-radius:22px;padding:16px;margin-top:16px}.end-note{font-size:clamp(20px,4vw,28px);line-height:2;color:#ffe1ed}.typing-text{min-height:90px;white-space:pre-wrap}.reveal-button{max-width:280px;margin:18px auto 0;display:block}footer{text-align:center;color:#d4a9c1;font-size:12px;margin-top:30px}.float{position:fixed;bottom:-45px;color:#ff8fba;opacity:.58;pointer-events:none;animation:rise linear infinite;z-index:0}@keyframes rise{to{transform:translateY(-115vh) rotate(30deg);opacity:0}}@media(max-width:520px){main{width:94%;padding-top:16px}.panel{border-radius:22px}}
+</style></head><body><div id="scrollProgress"></div><main>
+<section class="panel center" id="gate"><div class="heart">♡</div><div class="eyebrow">A LITTLE SURPRISE FOR YOU</div><h1>إلى مايا ❤️</h1><p class="sub">في حكاية صغيرة معمولة مخصوص ليكي…<br>اكتبي كلمة السر وافتحي المفاجأة 💗</p><input id="password" type="password" placeholder="كلمة السر 🔐" autocomplete="off"><button id="open">افتحي المفاجأة 💗</button><div id="error" aria-live="polite"></div></section>
+<div id="content">
+<section class="panel center reveal" id="opening">
+<div class="eyebrow">JUST FOR YOU, MAYA</div><div class="heart">♥</div>
+<h1>إنتِ أجمل حكاية ❤️</h1>
+<p class="end-note typing-text" id="openingText" aria-live="polite"></p>
+<a href="#letter" class="scroll-link">كمّلي يا أجمل حاجة في حياتي ↓</a>
+</section>
+<section class="panel" id="letter"><div class="center"><div class="eyebrow">A MESSAGE FROM MY HEART</div><h2>رسالة ليكي يا مايا ❤️</h2><p class="sub">اقريها براحتك… كل كلمة فيها طالعة من قلبي.</p></div><div class="message typing-text" id="message" aria-live="polite"></div><div class="signature center reveal-signature" id="letterSignature">من قلبي… ليكي يا مايا 💗</div></section>
+<section class="panel center section reveal" id="confession">
+<div class="heart">♡</div><div class="eyebrow">THE WORDS I WANTED TO SAY</div>
+<h2>في حاجة لازم تعرفيها يا مايا… ❤️</h2>
+<p class="sub">كمّلي للنهاية… فيه كلام مستنيكي هنا ❤️</p>
+<p class="end-note typing-text" id="confessionText" aria-live="polite"></p>
+<p class="signature reveal-signature" id="finalSignature">بحبك يا مايا ♥️🥹</p>
+</section>
+</div><footer>اتعملت بحب… علشان مايا ❤️</footer></main>
+<script>
+// لتغيير كلمة المرور مستقبلًا، عدّل القيمة هنا.
+const SITE_PASSWORD = "1102026";
+// أول كلمات تظهر لمايا بعد المفاجأة.
+const OPENING = "يا مايا، وجودك أجمل صدفة في حياتي، وضحكتك حكاية قلبي بيتمنى يعيشها كل يوم. ❤️";
+// الرسالة الأساسية كما أرسلها صاحب الموقع.
+const MESSAGE = `عارفة لما يكون في حد في حياتك كده بالصدفة بس الصدفة دي تتحول لأجمل حاجة حصلتلك في الدنيا دي الصدفة اللي بدأت بسؤال عابر واهتمام بسيط ومن غير ما نحس بقت حاجة أساسية في اليوم بقت عادة بقت راحة بقت جزء من الروتين اللي من غيره اليوم ناقص من غيره مفيش طعم للأيام من غيره بحس إن في حاجة مهمة مش موجودة من اول ما اتقابلنا  وإحنا بنطمن على بعض سؤال بسيط هنا ورد بسيط هناك بس سبحان الله الحاجات البسيطة دي بتكبر وبتاخد مكان في القلب من غير منحس ومع الأيام بقت الحاجات دي أكتر وأعمق وبقت العلاقة أوثق وأقوى لحد ما الايام عدت علينا ظهر علينا اننا بنخاف ع بعض واننا نيتنا كويسه واللي حسيت إنها كانت السبب في إن كل حاجة تتغير في إن المسافة تقصر في إن المشاعر تبقى أوضح في إن وجودك بقى حاجة رئيسية في يومي مش مجرد حد بسأل عليه وخلاص لا بقى شخص أساسي بقى من الناس اللي اليوم من غيرهم مش مكتمل وبدون ما أخد بالي كنت بقرب أكتر وأكتر وبقيتي حاجة غالية أوي على قلبي ومن اول اسبوع  يعدي علينا وأنا متأكد إنك مش مجرد مرحلة ولا وقت يعدي وخلاص لا إنتي من الناس اللي وجودهم في الحياة مش رفاهية وجودهم ضرورة وجودهم نعمة وجودهم حياة أنا اوعدك   إني هكون في ضهرك دايما إني مش هسيبك أبدا إني هكون السند اللي تلجأي ليه في أي وقت إني هكون الدعم اللي يقويكي وقت الضعف إني هكون الشخص اللي مهما كانت الدنيا عاملة ازاي هيفضل ثابت جنبك هيفضل مؤمن بيكي وبأحلامك وبكل حاجة نفسك توصلي ليها هفضل أدفعك لقدام هفضل أشجعك هفضل أكون جنبك بكل الطرق هفضل أكون الأمان اللي ترجعي ليه وقت القلق هفضل أكون الطبطبة اللي تهون عليكي التعب وهفضل أكون السند اللي مستحيل يسيبك لوحدك هفضل أكون معاك في كل خطوة في كل مرحلة في كل تفصيلة صغيرة وكبيرة في حياتك مش بس بالكلام لا بالفعل بالحضور بالدعم بالسند بكل حاجة ممكن أعملها علشان تكوني أحسن وأقوى وأنجح وأفرح بيكي وأشوفك في المكان اللي تستحقيه لأنك تستحقي كل حاجة حلوة تستحقي الفرحة والنجاح والراحة وكل الخير اللي في الدنيا وأنا هفضل معاكي لحد ما توصلي لكل ده وهفضل جمبك طول ما أنا موجود ومش هسيبك أبدا لأنك بقيتي حاجة مهمة أوي أوي أوي في حياتي وربنا وحده اللي يعلم غلاوتك عندي قد ايه ♥️🥹`;
+const gate=document.getElementById('gate'), content=document.getElementById('content'), password=document.getElementById('password'), error=document.getElementById('error');
+let messageStarted = false;
+let openingStarted = false;
+function typeText(text, target, speed=24, done){
+  const chars = Array.from(text);
+  let i = 0;
+  const timer = setInterval(()=>{
+    target.textContent += chars[i] || '';
+    i++;
+    if(i >= chars.length){ clearInterval(timer); if(done) done(); }
+  }, speed);
+}
+function flowerCelebration(){
+  const layer=document.createElement('div');
+  layer.className='flower-burst';
+  document.body.appendChild(layer);
+  const flowers=['🌹','🌸','🌷','💐','🌺'];
+  for(let i=0;i<72;i++){
+    const f=document.createElement('span');
+    f.className='burst-flower';
+    f.textContent=flowers[i%flowers.length];
+    const angle=(Math.PI*2*i)/72+(Math.random()-.5)*.22;
+    const distance= Math.min(window.innerWidth,window.innerHeight)*(.38+Math.random()*.48);
+    f.style.setProperty('--tx',Math.cos(angle)*distance+'px');
+    f.style.setProperty('--ty',Math.sin(angle)*distance+'px');
+    f.style.setProperty('--scale',(.55+Math.random()*1.15).toFixed(2));
+    f.style.setProperty('--rot',(Math.random()*520-260)+'deg');
+    f.style.animationDelay=(Math.random()*.42)+'s';
+    layer.appendChild(f);
+  }
+  setTimeout(()=>layer.remove(),4200);
+}
+function unlock(){
+  if(password.value.trim()===SITE_PASSWORD){
+    gate.style.display='none';
+    content.style.display='block';
+    window.scrollTo({top:0,behavior:'instant'});
+    flowerCelebration();
+    setTimeout(()=>{openingObserver.observe(document.getElementById('opening'));heroObserver.observe(document.getElementById('letter'));},450);
+  }else{
+    error.textContent='كلمة السر مش صحيحة، جرّبي تاني ❤️';
+  }
+}
+document.getElementById('open').addEventListener('click',unlock);
+password.addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
+
+for(let i=0;i<24;i++){const h=document.createElement('div');h.className='float';h.textContent=Math.random()>.5?'♥':'♡';h.style.left=Math.random()*100+'vw';h.style.animationDuration=(10+Math.random()*15)+'s';h.style.animationDelay=(-Math.random()*20)+'s';h.style.fontSize=(14+Math.random()*24)+'px';document.body.appendChild(h);}
+
+const CONFESSION = `بصي انا بقالى فترة كبيرة شايل كلام جوايا ومش عارف أطلعه ازاي ولا امتى وكل مرة أقول هسكت بس قلبي مش بيسكت وعاوز ابادر بس مقدرش استني بجد انتي مش مجرد حد في حياتي عادي انتي حد وجوده فارق معايا بجد وجودك بيطمني وكلامك بيروقني وضحكتك بتغير مود يوم كامل لقيت نفسي بهتم بتفاصيلك من غير ما أحس المهم اناا............
+مكنتش ناوي أقول ولا أضغطك ولا أحرجك بس حاسس إن السكوت بقى تقيل عليا وحبيت أكون صريح مع نفسي ومعاكي
+الحقيقة البسيطة اللي من غير لف ودوران إني بحبك😍😍😂❤️❤️❤️
+بحبك بهدوء وباحترام وبخوف عليكي مش حب كلام وخلاص ومش هيكون كلام وخلاص
+بحبك عشان انتي بعفويتك بقلبك بطريقتك اللي شبهك ومش شبه حد
+ومهما كان ردك ايه انا متقبله وهفضل مقدرك ومحتفظ بمكانتك جوايا
+كل اللي كنت محتاجه إني أقولك الحقيقة زي ما هي❤️❤️❤️❤️`;
+let confessionStarted = false;
+const openingText = document.getElementById('openingText');
+const openingSection = document.getElementById('opening');
+const openingObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting && !openingStarted){
+      openingStarted = true;
+      entry.target.classList.add('visible');
+      typeText(OPENING, openingText, 55, ()=>{});
+      openingObserver.disconnect();
+    }
+  });
+},{threshold:0.18});
+
+const letter = document.getElementById('letter');
+const messageTarget = document.getElementById('message');
+const letterSignature = document.getElementById('letterSignature');
+const confessionSection = document.getElementById('confession');
+const finalSignature = document.getElementById('finalSignature');
+
+const heroObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting && !messageStarted){
+      messageStarted = true;
+      typeText(MESSAGE, messageTarget, 19, ()=>letterSignature.classList.add('visible'));
+      heroObserver.disconnect();
+    }
+  });
+},{threshold:0.08});
+
+const revealObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      if(entry.target.id==='confession') typeConfession();
+      revealObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:0.12, rootMargin:'0px 0px -5% 0px'});
+
+document.querySelectorAll('.panel.reveal:not(#opening)').forEach(el=>revealObserver.observe(el));
+revealObserver.observe(confessionSection);
+
+function typeConfession(){
+  if(confessionStarted) return;
+  confessionStarted = true;
+  const target = document.getElementById('confessionText');
+  typeText(CONFESSION, target, 42, ()=>finalSignature.classList.add('visible'));
+}
+
+const progress = document.getElementById('scrollProgress');
+function updateProgress(){
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+}
+window.addEventListener('scroll', updateProgress, {passive:true});
+window.addEventListener('resize', updateProgress);
+updateProgress();
+</script></body></html>
